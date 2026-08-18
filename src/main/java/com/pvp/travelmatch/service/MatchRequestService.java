@@ -139,7 +139,7 @@ public class MatchRequestService {
 
         MatchRequest saved = matchRequestRepository.save(request);
 
-        String reviewLink = "http://localhost:4200/requests";
+        String reviewLink = "https://travelmatch49.netlify.app/requests";
 
 // HTML Email
         String htmlEmail = """
