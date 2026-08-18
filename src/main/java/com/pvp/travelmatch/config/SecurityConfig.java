@@ -36,13 +36,8 @@ public class SecurityConfig {
                 )
 
                 .authorizeHttpRequests(auth -> auth
-                        // Allow CORS preflight requests
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-
-                        // Login, registration, etc.
                         .requestMatchers("/api/auth/**").permitAll()
-
-                        // Everything else requires authentication
                         .anyRequest().authenticated()
                 )
 
@@ -63,8 +58,7 @@ public class SecurityConfig {
 
         CorsConfiguration configuration = new CorsConfiguration();
 
-        // Angular production frontend
-        configuration.setAllowedOrigins(List.of(
+        configuration.setAllowedOriginPatterns(List.of(
                 "https://travelmatch49.netlify.app"
         ));
 
@@ -76,7 +70,6 @@ public class SecurityConfig {
                 "OPTIONS"
         ));
 
-        // Allow Authorization, Content-Type and future headers
         configuration.setAllowedHeaders(List.of("*"));
 
         configuration.setAllowCredentials(true);
@@ -84,10 +77,7 @@ public class SecurityConfig {
         UrlBasedCorsConfigurationSource source =
                 new UrlBasedCorsConfigurationSource();
 
-        source.registerCorsConfiguration(
-                "/**",
-                configuration
-        );
+        source.registerCorsConfiguration("/**", configuration);
 
         return source;
     }
