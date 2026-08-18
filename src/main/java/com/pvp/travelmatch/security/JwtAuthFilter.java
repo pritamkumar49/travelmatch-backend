@@ -1,6 +1,7 @@
 package com.pvp.travelmatch.security;
 
 import jakarta.servlet.FilterChain;
+import org.springframework.http.HttpMethod;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
