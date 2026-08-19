@@ -1,8 +1,9 @@
 package com.pvp.travelmatch.service;
 
+
 import com.resend.Resend;
-import com.resend.SendEmailRequest;
-import com.resend.SendEmailResponse;
+import com.resend.services.emails.model.CreateEmailOptions;
+import com.resend.services.emails.model.CreateEmailResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -23,15 +24,15 @@ public class EmailService {
 
             Resend resend = new Resend(resendApiKey);
 
-            SendEmailRequest request = SendEmailRequest.builder()
+            CreateEmailOptions params = CreateEmailOptions.builder()
                     .from("TravelMatch <onboarding@resend.dev>")
                     .to(to)
                     .subject(subject)
                     .html(htmlBody)
                     .build();
 
-            SendEmailResponse response =
-                    resend.emails().send(request);
+            CreateEmailResponse response =
+                    resend.emails().send(params);
 
             System.out.println(
                     "Email sent successfully. ID: "
