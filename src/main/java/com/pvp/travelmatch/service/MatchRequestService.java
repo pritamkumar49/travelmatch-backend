@@ -139,7 +139,7 @@ public class MatchRequestService {
 
         MatchRequest saved = matchRequestRepository.save(request);
 
-        String reviewLink = "http://localhost:4200/requests";
+        String reviewLink = "https://travelmatch49.netlify.app/requests";
 
 // HTML Email
         String htmlEmail = """
@@ -298,8 +298,8 @@ public MatchRequest updateStatus(Long requestId, String status) {
         User receiver = request.getReceiver();
         String destination = request.getTravelPlan().getDestination();
 
-        String senderChatLink = "http://localhost:4200/chat/" + receiver.getId();
-        String receiverChatLink = "http://localhost:4200/chat/" + sender.getId();
+        String senderChatLink = "https://travelmatch49.netlify.app/chat/" + receiver.getId();
+        String receiverChatLink = "https://travelmatch49.netlify.app/chat/" + sender.getId();
 
         // -------- HTML TEMPLATE FOR SENDER --------
         String senderHtml = """
