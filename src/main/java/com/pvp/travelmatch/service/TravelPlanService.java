@@ -42,7 +42,7 @@ public class TravelPlanService {
 
         TravelPlan savedPlan = travelPlanRepository.save(plan);
 
-        String dashboardLink = "http://localhost:4200/dashboard";
+        String dashboardLink = "https://travelmatch49.netlify.app/dashboard";
 
         String htmlEmail = """
 <html>
