@@ -52,7 +52,7 @@ public class MatchRequestService {
         );
 
         ResponseEntity<List> response = restTemplate.postForEntity(
-                "http://localhost:5000/recommend",
+                "https://travelmatch-chatbot-production.up.railway.app/recommend",
                 request,
                 List.class
         );
