@@ -41,7 +41,7 @@ public class ChatController {
 
         System.out.println("User message: " + message);
 
-        String flaskUrl = "http://localhost:5000/get_response";
+        String flaskUrl = "https://travelmatch-chatbot-production.up.railway.app/get_response";
 
         Map<String, String> aiRequest = new HashMap<>();
         aiRequest.put("message", message);
