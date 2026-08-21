@@ -113,7 +113,7 @@ public class ChatService {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
-    private final String AI_URL = "http://localhost:5000/get_response";
+    private final String AI_URL = "https://travelmatch-chatbot-production.up.railway.app/get_response";
 
     public ChatResponse askBot(ChatRequest request){
 
